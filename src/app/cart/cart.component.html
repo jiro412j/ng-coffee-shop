@@ -1,0 +1,24 @@
+<div class="text-center">
+  <h4>Your Order</h4>
+</div>
+<table class="table mt-3">
+  <tbody>
+    <tr *ngFor="let order of orderList; let orderIndex = index">
+      <td class="text-center" width="15%">{{ orderIndex + 1 }}</td>
+      <td class="text-center font-weight-bold" width="40%">{{ order.name }}</td>
+      <td class="text-center" width="30%">{{ order.price }}</td>
+      <td class="text-center" width="15%">
+        <a class="delete-icon" (click)="deleteOrder(orderIndex)">
+          <i class="fas fa-times"></i>
+        </a>
+      </td>
+    </tr>
+    <tr *ngIf="orderList.length === 0">
+      <td colspan="4" class="text-center">No Order</td>
+    </tr>
+    <tr>
+      <td class="text-center font-weight-bold" colspan="3">Total</td>
+      <td class="text-center font-weight-bold">{{ calculateSumPrice() }}</td>
+    </tr>
+  </tbody>
+</table>
