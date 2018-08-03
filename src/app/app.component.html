@@ -1,12 +1,11 @@
-<!-- <router-outlet></router-outlet> -->
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <app-coffee-list (added)="addToCart($event)"></app-coffee-list>
-    </div>
-    <div class="col-md-6">
-      <app-cart [orderList]="addedList" (deleted)="deleteFromList($event)"></app-cart>
-    </div>
-  </div>
+<ul class="nav">
+  <li class="nav-item" routerLinkActive="active-li">
+    <a class="nav-link" [routerLink]="['/customer']">Customer</a>
+  </li>
+  <li class="nav-item" routerLinkActive="active-li">
+    <a class="nav-link" [routerLink]="['/owner']">Owner</a>
+  </li>
+</ul>
+<div style="padding-top: 90px">
+  <router-outlet></router-outlet>
 </div>
